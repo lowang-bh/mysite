@@ -6,40 +6,49 @@
 !_TAG_PROGRAM_VERSION	5.8	//
 ALLOWED_HOSTS	mysite/settings.py	/^ALLOWED_HOSTS = []$/;"	v
 BASE_DIR	mysite/settings.py	/^BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))$/;"	v
+Choice	polls/admin.py	/^from .models import Question, Choice$/;"	i
 Choice	polls/models.py	/^class Choice(models.Model):$/;"	c
 DATABASES	mysite/settings.py	/^DATABASES = {$/;"	v
 DEBUG	mysite/settings.py	/^DEBUG = True$/;"	v
+Http404	polls/views.py	/^from django.http import Http404$/;"	i
 HttpResponse	polls/views.py	/^from django.http import HttpResponse$/;"	i
 INSTALLED_APPS	mysite/settings.py	/^INSTALLED_APPS = ($/;"	v
 LANGUAGE_CODE	mysite/settings.py	/^LANGUAGE_CODE = 'en-us'$/;"	v
 MIDDLEWARE_CLASSES	mysite/settings.py	/^MIDDLEWARE_CLASSES = ($/;"	v
 Migration	polls/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
-Question	polls/admin.py	/^from .models import Question$/;"	i
+Question	polls/admin.py	/^from .models import Question, Choice$/;"	i
 Question	polls/models.py	/^class Question(models.Model):$/;"	c
+Question	polls/views.py	/^from .models import Question$/;"	i
 QuestionAdmin	polls/admin.py	/^class QuestionAdmin(admin.ModelAdmin):$/;"	c
+QuestionAdmin2	polls/admin.py	/^class QuestionAdmin2(admin.ModelAdmin):$/;"	c
 ROOT_URLCONF	mysite/settings.py	/^ROOT_URLCONF = 'mysite.urls'$/;"	v
 STATIC_URL	mysite/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 TEMPLATES	mysite/settings.py	/^TEMPLATES = [$/;"	v
-TIME_ZONE	mysite/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
+TIME_ZONE	mysite/settings.py	/^TIME_ZONE = 'Asia\/Shanghai'$/;"	v
 TestCase	polls/tests.py	/^from django.test import TestCase$/;"	i
 USE_I18N	mysite/settings.py	/^USE_I18N = True$/;"	v
 USE_L10N	mysite/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	mysite/settings.py	/^USE_TZ = True$/;"	v
 WSGI_APPLICATION	mysite/settings.py	/^WSGI_APPLICATION = 'mysite.wsgi.application'$/;"	v
-__str__	polls/models.py	/^    def __str__(self):              # __unicode__ on Python 2$/;"	m	class:Choice	file:
-__str__	polls/models.py	/^    def __str__(self):              # __unicode__ on Python 2$/;"	m	class:Question	file:
+__str__	polls/models.py	/^    def __str__(self):  # __unicode__ on Python 2$/;"	m	class:Choice	file:
+__str__	polls/models.py	/^    def __str__(self):  # __unicode__ on Python 2$/;"	m	class:Question	file:
 admin	mysite/urls.py	/^from django.contrib import admin$/;"	i
 admin	polls/admin.py	/^from django.contrib import admin$/;"	i
 application	mysite/wsgi.py	/^application = get_wsgi_application()$/;"	v
 choice_text	polls/models.py	/^    choice_text = models.CharField(max_length=200)$/;"	v	class:Choice
 dependencies	polls/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+detail	polls/views.py	/^def detail(request, question_id):$/;"	f
 execute_from_command_line	manage.py	/^    from django.core.management import execute_from_command_line$/;"	i
 field	polls/migrations/0001_initial.py	/^            field=models.ForeignKey(to='polls.Question'),$/;"	v	class:Migration
 fields	polls/admin.py	/^    fields = ['pub_date', 'question_text']$/;"	v	class:QuestionAdmin
+fields	polls/admin.py	/^    fields = ['question_text', 'pub_date']$/;"	v	class:QuestionAdmin2
 fields	polls/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 get_wsgi_application	mysite/wsgi.py	/^from django.core.wsgi import get_wsgi_application$/;"	i
 include	mysite/urls.py	/^from django.conf.urls import include, url$/;"	i
 index	polls/views.py	/^def index(request):$/;"	f
+index1	polls/views.py	/^def index1(request):$/;"	f
+index2	polls/views.py	/^def index2(request):$/;"	f
+loader	polls/views.py	/^from django.template import loader$/;"	i
 migrations	polls/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	i
 model_name	polls/migrations/0001_initial.py	/^            model_name='choice',$/;"	v	class:Migration
 models	polls/migrations/0001_initial.py	/^from django.db import migrations, models$/;"	i
@@ -55,11 +64,15 @@ pub_date	polls/models.py	/^    pub_date = models.DateTimeField('date published')
 question	polls/models.py	/^    question = models.ForeignKey(Question)$/;"	v	class:Choice
 question_text	polls/models.py	/^    question_text = models.CharField(max_length=200)$/;"	v	class:Question
 render	polls/views.py	/^from django.shortcuts import render$/;"	i
+results	polls/views.py	/^def results(request, question_id):$/;"	f
 sys	manage.py	/^import sys$/;"	i
+timezone	polls/models.py	/^from django.utils import timezone$/;"	i
 unicode_literals	polls/migrations/0001_initial.py	/^from __future__ import unicode_literals$/;"	i
 url	mysite/urls.py	/^from django.conf.urls import include, url$/;"	i
 url	polls/urls.py	/^from django.conf.urls import url$/;"	i
 urlpatterns	mysite/urls.py	/^urlpatterns = [$/;"	v
 urlpatterns	polls/urls.py	/^urlpatterns = [$/;"	v
 views	polls/urls.py	/^from . import views$/;"	i
+vote	polls/views.py	/^def vote(request, question_id):$/;"	f
+votes	polls/models.py	/^    votes = models.IntegerField(default=0)$/;"	v	class:Choice
 was_published_recently	polls/models.py	/^    def was_published_recently(self):$/;"	m	class:Question
